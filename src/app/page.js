@@ -20,8 +20,6 @@ export default function Home() {
           api.get("/donations"),
         ]);
         setEvents(eventsRes.data);
-        setStats(donationsRes.data.data);
-        console.log(eventsRes, donationsRes);
       } catch (error) {
         console.error("Failed to fetch data:", error);
       } finally {
