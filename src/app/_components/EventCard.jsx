@@ -8,7 +8,7 @@ import Link from "next/link";
 export function EventsCard() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(events);
+
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -37,7 +37,7 @@ export function EventsCard() {
           <p className="text-gray-500 text-lg">No upcoming events scheduled</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event) => (
             <div
               key={event._id}
@@ -94,12 +94,12 @@ export function EventsCard() {
                   {event.location}
                 </div>
 
-                {/* <Link
-                  href={`/events/${event._id}`}
-                  className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-                >
-                  View Details
-                </Link> */}
+                {/* Optional: Add a link to event details */}
+                <Link href={`/events/${event._id}`}>
+                  <a className="text-blue-600 hover:text-blue-800 text-sm">
+                    View Details
+                  </a>
+                </Link>
               </div>
             </div>
           ))}

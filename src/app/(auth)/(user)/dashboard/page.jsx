@@ -39,12 +39,12 @@ const DashboardPage = () => {
 
   return (
     <ProtectedRoute>
-      <div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Dashboard</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Events Card */}
-          <div className=" p-6 rounded-lg shadow">
+          <div className="bg-white p-6 rounded-lg shadow">
             <h2 className="text-lg font-semibold mb-4">Upcoming Events</h2>
             {events.length > 0 ? (
               <ul className="space-y-2">
@@ -97,7 +97,7 @@ const DashboardPage = () => {
           )}
 
           {/* Quick Actions Card */}
-          <div className=" p-6 rounded-lg shadow">
+          <div className="bg-white p-6 rounded-lg shadow">
             <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
             <div className="space-y-3">
               {user.role === "admin" && (

@@ -37,7 +37,7 @@ const Reports = () => {
   }
 
   return (
-    <div>
+    <div className="max-w-full sm:max-w-3xl mx-auto p-6 bg-white shadow-xl rounded-2xl mt-6">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">Reports</h1>
 
       {/* Donations Section */}

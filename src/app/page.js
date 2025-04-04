@@ -39,8 +39,14 @@ export default function Home() {
       {/* Events Section - Full Width */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6">
-            <EventsCard />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {loading ? (
+              <LoadingSkeleton count={3} />
+            ) : (
+              events.map((event) => (
+                <EventsCard key={event._id} event={event} />
+              ))
+            )}
           </div>
         </div>
       </section>

@@ -37,7 +37,7 @@ export default function EventsPage() {
           <p className="text-gray-500 text-lg">No upcoming events scheduled</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-800">
           {events.map((event) => (
             <div
               key={event._id}
@@ -94,12 +94,14 @@ export default function EventsPage() {
                   {event.location}
                 </div>
 
-                {/* <Link
-                  href={`/events/${event._id}`}
-                  className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-                >
-                  View Details
-                </Link> */}
+                <div className="text-center mt-4">
+                  <Link
+                    href={`/events/${event._id}`}
+                    className="inline-block text-blue-600 hover:text-blue-800"
+                  >
+                    View Details
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

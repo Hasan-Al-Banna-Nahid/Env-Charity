@@ -33,11 +33,10 @@ export const LoadingSkeleton = ({ count = 3 }) => {
     </>
   );
 };
-
 export const StatsSkeleton = () => (
-  <div className="grid grid-cols-2 gap-8 md:grid-cols-4 animate-pulse">
-    {[1, 2, 3, 4].map((item) => (
-      <div key={item} className="text-center p-4">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 animate-pulse">
+    {Array.from({ length: 4 }).map((_, index) => (
+      <div key={index} className="text-center p-4">
         <div className="bg-gray-200 h-10 w-3/4 mx-auto rounded"></div>
         <div className="bg-gray-200 h-6 w-1/2 mx-auto mt-2 rounded"></div>
       </div>

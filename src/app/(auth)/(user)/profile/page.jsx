@@ -48,12 +48,16 @@ const ProfilePage = () => {
   };
 
   if (loading) {
-    return <div>Loading profile...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
+      </div>
+    );
   }
 
   return (
     <ProtectedRoute>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800">My Profile</h1>
           {!editMode && (

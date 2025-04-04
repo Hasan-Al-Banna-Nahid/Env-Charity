@@ -22,18 +22,20 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center space-x-6">
-          <Link href="/about" className="hover:text-green-200">
-            About
-          </Link>
-          <Link href="/events" className="hover:text-green-200">
-            Events
-          </Link>
-          <Link href="/donate" className="hover:text-green-200">
-            Donate
-          </Link>
-          <Link href="/contact" className="hover:text-green-200">
-            Contact
-          </Link>
+          <div className="hidden md:flex space-x-6">
+            <Link href="/about" className="hover:text-green-200">
+              About
+            </Link>
+            <Link href="/events" className="hover:text-green-200">
+              Events
+            </Link>
+            <Link href="/donate" className="hover:text-green-200">
+              Donate
+            </Link>
+            <Link href="/contact" className="hover:text-green-200">
+              Contact
+            </Link>
+          </div>
 
           {user ? (
             <div className="flex items-center space-x-4">
@@ -60,6 +62,31 @@ const Navbar = () => {
               </Link>
             </div>
           )}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center">
+          <button
+            className="text-white focus:outline-none"
+            onClick={() => {
+              // Handle mobile menu toggle (you can integrate a menu dropdown here)
+            }}
+          >
+            <svg
+              className="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>

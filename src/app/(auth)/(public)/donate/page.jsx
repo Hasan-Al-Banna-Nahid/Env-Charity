@@ -103,7 +103,7 @@ const DonationForm = () => {
   const presetAmounts = [10, 25, 50, 100, 250];
 
   return (
-    <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+    <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
       <h2 className="text-xl font-semibold text-center mb-4">
         Make a Donation
       </h2>
@@ -124,14 +124,32 @@ const DonationForm = () => {
           className="w-full p-2 border rounded"
           required
         />
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          placeholder="Amount (USD)"
-          className="w-full p-2 border rounded"
-          required
-        />
+        <div>
+          <label htmlFor="amount" className="block text-sm font-medium">
+            Donation Amount
+          </label>
+          <div className="flex space-x-2 mt-1 flex-wrap">
+            {presetAmounts.map((preset) => (
+              <button
+                type="button"
+                key={preset}
+                onClick={() => setAmount(preset)}
+                className="px-3 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 mt-2"
+              >
+                ${preset}
+              </button>
+            ))}
+          </div>
+          <input
+            id="amount"
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder="Enter custom amount"
+            className="w-full p-2 border rounded mt-2"
+            required
+          />
+        </div>
         <CardElement
           onChange={(e) => setCardComplete(e.complete)}
           className="p-2 border rounded"

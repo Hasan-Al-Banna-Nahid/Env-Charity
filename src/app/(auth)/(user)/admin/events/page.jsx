@@ -97,12 +97,12 @@ const EventManagement = () => {
 
   return (
     <ProtectedRoute roles={["admin"]}>
-      <div>
+      <div className="max-w-full sm:max-w-3xl mx-auto p-6 bg-white shadow-xl rounded-2xl mt-6">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800">Event Management</h1>
           <button
             onClick={() => setShowModal(true)}
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
+            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded sm:text-sm md:text-base"
           >
             Create New Event
           </button>
@@ -113,7 +113,7 @@ const EventManagement = () => {
             <p className="text-gray-500">No events found</p>
           </div>
         ) : (
-          <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+          <div className="overflow-x-auto bg-white shadow overflow-hidden sm:rounded-lg">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -133,19 +133,19 @@ const EventManagement = () => {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {events.map((event) => (
-                  <tr key={event._id}>
+                  <tr key={event._id} className="text-sm">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="font-medium text-gray-900">
                         {event.title}
                       </div>
-                      <div className="text-sm text-gray-500 truncate max-w-xs">
+                      <div className="text-xs text-gray-500 truncate max-w-xs">
                         {event.description}
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-6 py-4 whitespace-nowrap text-xs">
                       {new Date(event.date).toLocaleString()}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-6 py-4 whitespace-nowrap text-xs">
                       {event.location}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
@@ -201,7 +201,7 @@ const Modal = ({ title, onClose, onSubmit, eventData, onChange }) => (
       <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
       <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full z-20 p-6">
         <h3 className="text-lg font-medium text-gray-900 mb-4">{title}</h3>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="space-y-4">
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
               Title
