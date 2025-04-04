@@ -93,13 +93,6 @@ export function EventsCard() {
                   </svg>
                   {event.location}
                 </div>
-
-                {/* Optional: Add a link to event details */}
-                <Link href={`/events/${event._id}`}>
-                  <a className="text-blue-600 hover:text-blue-800 text-sm">
-                    View Details
-                  </a>
-                </Link>
               </div>
             </div>
           ))}
