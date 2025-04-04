@@ -4,6 +4,7 @@ import ProtectedRoute from "@/app/_components/ProtectedRoute";
 import { useState, useEffect } from "react";
 import api from "@/app/_lib/api";
 import { toast } from "react-hot-toast";
+import { useAuth } from "@/app/_components/AuthProvider";
 
 const VolunteerDashboard = () => {
   const [events, setEvents] = useState([]);
