@@ -93,15 +93,6 @@ export default function EventsPage() {
                   </svg>
                   {event.location}
                 </div>
-
-                <div className="text-center mt-4">
-                  <Link
-                    href={`/events/${event._id}`}
-                    className="inline-block text-blue-600 hover:text-blue-800"
-                  >
-                    View Details
-                  </Link>
-                </div>
               </div>
             </div>
           ))}

@@ -87,12 +87,6 @@ const DashboardPage = () => {
               ) : (
                 <p className="text-gray-500">No recent donations</p>
               )}
-              <Link
-                href="/admin/donations"
-                className="mt-4 inline-block text-green-600 hover:text-green-800 text-sm"
-              >
-                View all donations
-              </Link>
             </div>
           )}
 
